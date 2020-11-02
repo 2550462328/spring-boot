@@ -1,0 +1,21 @@
+spring.profiles.active: @profileActive@
+zhanghui.springboot.test:
+  name: 张辉
+  title: Spring boot章节学习
+  page: ${random.int(16)}
+  content: ${zhanghui.springboot.test.name}正在进行${zhanghui.springboot.test.title}，正在学习第${zhanghui.springboot.test.page}章
+tengxun.verfycode:
+  url: https://ssl.captcha.qq.com/ticket/verify
+  appid: 1301601575
+  secretkey: xxxxxxx
+redisson:
+  address: redis://127.0.0.1:6379
+  password:
+spring.freemarker.html.path: E://FileReceived//freemarker//
+oauth:
+  clientid: ca0d972cabea7c246eb3
+  clientsecret: bc31d1545f73f3b4597f96e0fc7e711a84536cd3
+
+
+
+

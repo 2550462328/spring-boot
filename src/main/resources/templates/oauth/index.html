@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Node OAuth2 Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<a id="login">Login with GitHub</a>
+
+<script>
+    var client_id = 'ca0d972cabea7c246eb3';
+    var authorize_uri = 'https://github.com/login/oauth/authorize';
+    var redirect_uri = 'http://localhost:8082/oauth/redirect';
+    var link = document.getElementById('login');
+    link.href = authorize_uri + '?client_id=' + client_id + '&redirect_uri=' + redirect_uri + "&scope=user";
+</script>
+
+</body>
+
+
+</html>

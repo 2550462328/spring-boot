@@ -1,0 +1,99 @@
+server.port: 8082
+#主数据库
+spring:
+  application:
+    name: springboot_test
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/spring_boot_test1
+      username: root
+      password: root
+  jpa:
+    show-sql: true
+    #自动创建表结构，用于自动创建、更新、验证数据库表结构。
+    hibernate:
+      ddl-auto: create
+  redis:
+    database: 0
+    host: localhost
+    jedis:
+      pool:
+        #最大连接数据库连接数,设 0 为没有限制
+        max-active: 8
+        #最大等待连接中的数量,设 0 为没有限制
+        max-idle: 8
+        #最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制。
+        max-wait: -1ms
+        #最小等待连接中的数量,设 0 为没有限制
+        min-idle: 0
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 0
+      shutdown-timeout: 100ms
+    password: ''
+    port: 6379
+  #ldap配置
+#  ldap:
+#    urls:
+#    base:
+#    username:
+#    password:
+##连接JNDI数据源
+##jndi-name: java:jboss/datasources/customers
+##次数据库
+#spring.datasource.secondary:
+#      driver-class-name: com.mysql.jdbc.Driver
+#      jdbc-url: jdbc:mysql://localhost:3306/spring_boot_test2
+#      username: root
+#      password: root
+#druid连接池 Mybatis连接
+#spring:
+#    datasource:
+#        name: mysql_test
+#        type: com.alibaba.druid.pool.DruidDataSource
+#        #druid相关配置
+#        druid:
+#          #监控统计拦截的filters
+#          filters: stat
+#          driver-class-name: com.mysql.jdbc.Driver
+#          #基本属性
+#          url: jdbc:mysql://127.0.0.1:3306/spring_boot_test1?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+#          username: root
+#          password: root
+#          #配置初始化大小/最小/最大
+#          initial-size: 1
+#          min-idle: 1
+#          max-active: 20
+#          #获取连接等待超时时间
+#          max-wait: 60000
+#          #间隔多久进行一次检测，检测需要关闭的空闲连接
+#          time-between-eviction-runs-millis: 60000
+#          #一个连接在池中最小生存的时间
+#          min-evictable-idle-time-millis: 300000
+#          validation-query: SELECT 'x'
+#          test-while-idle: true
+#          test-on-borrow: false
+#          test-on-return: false
+#          #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
+#          pool-prepared-statements: false
+#          max-pool-prepared-statement-per-connection-size: 20
+#    flyway初始化数据库地址
+#    flyway:
+#      locations: classpath:/db
+
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: cn.ictt.zhanghui.springboot_test.pojo
+
+# pagehelper
+#pagehelper:
+#    helperDialect: mysql
+#    reasonable: true
+#    supportMethodsArguments: true
+#    params: count=countSql
+#    returnPageInfo: check
+
+

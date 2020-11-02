@@ -1,0 +1,87 @@
+Manifest-Version: 1.0
+Class-Path: spring-web-5.0.9.RELEASE.jar qiniu-java-sdk-7.2.11.jar spr
+ ing-context-5.0.9.RELEASE.jar tomcat-embed-core-8.5.34.jar jackson-da
+ tatype-jdk8-2.9.5.jar spring-boot-starter-mail-2.0.5.RELEASE.jar spri
+ ng-boot-starter-2.0.5.RELEASE.jar spring-statemachine-core-1.2.0.RELE
+ ASE.jar activemq-broker-5.15.6.jar spring-boot-starter-data-redis-2.0
+ .5.RELEASE.jar spring-aop-5.0.9.RELEASE.jar spring-boot-starter-tomca
+ t-2.0.5.RELEASE.jar spring-boot-starter-json-2.0.5.RELEASE.jar spring
+ -webmvc-5.0.5.RELEASE.jar activation-1.1.jar geronimo-jta_1.0.1B_spec
+ -1.0.1.jar classmate-1.3.4.jar spring-hateoas-0.25.0.RELEASE.jar nett
+ y-resolver-4.1.29.Final.jar commons-lang3-3.4.jar slf4j-api-1.7.25.ja
+ r pagehelper-spring-boot-starter-1.2.5.jar validation-api-2.0.1.Final
+ .jar guava-18.0.jar spring-data-commons-2.0.10.RELEASE.jar mybatis-sp
+ ring-1.3.2.jar hibernate-core-5.2.17.Final.jar jackson-datatype-jsr31
+ 0-2.9.6.jar commons-codec-1.11.jar springfox-swagger-common-2.2.2.jar
+  slf4j-log4j12-1.7.25.jar spring-messaging-5.0.9.RELEASE.jar spring-d
+ ata-redis-2.0.10.RELEASE.jar logback-core-1.2.3.jar spring-web-5.0.5.
+ RELEASE.jar happy-dns-java-0.1.6.jar druid-1.1.9.jar jackson-annotati
+ ons-2.9.0.jar spring-boot-starter-jdbc-2.0.5.RELEASE.jar unbescape-1.
+ 1.5.RELEASE.jar spring-aop-5.0.5.RELEASE.jar swagger-models-1.5.3.jar
+  spring-core-5.0.5.RELEASE.jar pagehelper-5.1.4.jar commonmark-0.8.0.
+ jar HdrHistogram-2.1.10.jar spring-context-support-5.0.5.RELEASE.jar 
+ jackson-databind-2.9.6.jar swagger-annotations-1.5.3.jar spring-boot-
+ starter-actuator-2.0.5.RELEASE.jar activemq-openwire-legacy-5.15.6.ja
+ r HikariCP-2.7.8.jar spring-expression-5.0.9.RELEASE.jar stax2-api-3.
+ 1.4.jar javax.annotation-api-1.3.2.jar geronimo-j2ee-management_1.1_s
+ pec-1.0.1.jar springfox-schema-2.2.2.jar snakeyaml-1.19.jar tomcat-em
+ bed-core-8.5.29.jar tomcat-embed-el-8.5.29.jar spring-jdbc-5.0.5.RELE
+ ASE.jar reactive-streams-1.0.2.jar thymeleaf-spring5-3.0.9.RELEASE.ja
+ r spring-tx-5.0.9.RELEASE.jar spring-context-support-5.0.9.RELEASE.ja
+ r spring-boot-starter-activemq-2.0.5.RELEASE.jar spring-plugin-core-1
+ .2.0.RELEASE.jar gson-2.8.0.jar javax.mail-1.6.2.jar spring-boot-star
+ ter-json-2.0.1.RELEASE.jar activemq-pool-5.15.6.jar tomcat-embed-webs
+ ocket-8.5.34.jar spring-orm-5.0.9.RELEASE.jar spring-boot-starter-jdb
+ c-2.0.1.RELEASE.jar jackson-dataformat-xml-2.9.6.jar thymeleaf-3.0.9.
+ RELEASE.jar HikariCP-2.7.9.jar httpcore-4.4.9.jar okhttp-3.9.1.jar sp
+ ring-jdbc-5.0.9.RELEASE.jar netty-codec-4.1.29.Final.jar antlr-2.7.7.
+ jar activemq-jms-pool-5.15.6.jar mysql-connector-java-5.1.21.jar comm
+ ons-pool2-2.6.0.jar spring-boot-starter-2.0.1.RELEASE.jar aspectjrt-1
+ .8.13.jar netty-common-4.1.29.Final.jar jackson-module-parameter-name
+ s-2.9.6.jar jackson-module-jaxb-annotations-2.9.6.jar netty-transport
+ -4.1.29.Final.jar logback-classic-1.2.3.jar jsqlparser-1.0.jar spring
+ -context-5.0.5.RELEASE.jar xercesImpl-2.11.0.jar spring-boot-starter-
+ cache-2.0.5.RELEASE.jar LatencyUtils-2.0.3.jar jackson-datatype-joda-
+ 2.9.6.jar spring-boot-actuator-autoconfigure-2.0.5.RELEASE.jar thymel
+ eaf-extras-java8time-3.0.1.RELEASE.jar mapstruct-1.0.0.CR1.jar spring
+ -tx-5.0.5.RELEASE.jar spring-hateoas-0.24.0.RELEASE.jar log4j-api-2.1
+ 0.0.jar spring-core-5.0.9.RELEASE.jar spring-boot-starter-tomcat-2.0.
+ 1.RELEASE.jar springfox-spi-2.2.2.jar hawtbuf-1.11.jar spring-boot-st
+ arter-aop-2.0.5.RELEASE.jar tomcat-embed-el-8.5.34.jar jackson-databi
+ nd-2.9.5.jar spring-aspects-5.0.9.RELEASE.jar httpclient-4.5.5.jar sp
+ ring-boot-starter-web-2.0.5.RELEASE.jar springfox-core-2.2.2.jar spri
+ ng-beans-5.0.5.RELEASE.jar log4j-1.2.17.jar jackson-core-2.9.5.jar sp
+ ring-boot-starter-cache-2.0.1.RELEASE.jar geronimo-jms_1.1_spec-1.1.1
+ .jar spring-boot-starter-logging-2.0.1.RELEASE.jar springfox-spring-w
+ eb-2.2.2.jar spring-boot-starter-logging-2.0.5.RELEASE.jar netty-hand
+ ler-4.1.29.Final.jar cos_api-5.2.4.jar mysql-connector-java-5.1.46.ja
+ r spring-data-keyvalue-2.0.10.RELEASE.jar json-20140107.jar jackson-m
+ odule-parameter-names-2.9.5.jar pagehelper-spring-boot-autoconfigure-
+ 1.2.5.jar joda-time-2.9.9.jar spring-boot-autoconfigure-2.0.1.RELEASE
+ .jar activemq-client-5.15.6.jar jackson-core-2.9.6.jar spring-oxm-5.0
+ .9.RELEASE.jar druid-spring-boot-starter-1.1.9.jar springfox-swagger-
+ ui-2.2.2.jar spring-jcl-5.0.9.RELEASE.jar spring-boot-2.0.5.RELEASE.j
+ ar xml-apis-1.4.01.jar springfox-swagger2-2.2.2.jar javassist-3.22.0-
+ GA.jar mybatis-spring-boot-autoconfigure-1.3.2.jar spring-data-jpa-2.
+ 0.10.RELEASE.jar spring-boot-starter-thymeleaf-2.0.5.RELEASE.jar wood
+ stox-core-5.0.3.jar log4j-to-slf4j-2.10.0.jar lettuce-core-5.0.5.RELE
+ ASE.jar spring-boot-starter-data-jpa-2.0.5.RELEASE.jar hibernate-vali
+ dator-6.0.9.Final.jar mybatis-spring-boot-starter-1.3.2.jar jackson-d
+ atatype-jsr310-2.9.5.jar spring-jcl-5.0.5.RELEASE.jar jackson-datatyp
+ e-jdk8-2.9.6.jar jandex-2.0.3.Final.jar spring-beans-5.0.9.RELEASE.ja
+ r commonmark-ext-gfm-tables-0.8.0.jar hibernate-validator-6.0.12.Fina
+ l.jar aspectjweaver-1.8.13.jar javax.jms-api-2.0.1.jar dom4j-1.6.1.ja
+ r spring-jms-5.0.9.RELEASE.jar reactor-core-3.1.9.RELEASE.jar netty-b
+ uffer-4.1.29.Final.jar spring-boot-starter-aop-2.0.1.RELEASE.jar spri
+ ng-boot-actuator-2.0.5.RELEASE.jar hibernate-commons-annotations-5.0.
+ 1.Final.jar nekohtml-1.9.22.jar mybatis-3.4.6.jar emoji-java-3.2.0.ja
+ r micrometer-core-1.0.6.jar spring-boot-2.0.1.RELEASE.jar spring-boot
+ -autoconfigure-2.0.5.RELEASE.jar spring-expression-5.0.5.RELEASE.jar 
+ attoparser-2.0.4.RELEASE.jar spring-boot-starter-thymeleaf-2.0.1.RELE
+ ASE.jar spring-boot-starter-web-2.0.1.RELEASE.jar spring-plugin-metad
+ ata-1.2.0.RELEASE.jar jackson-datatype-joda-2.9.5.jar tomcat-embed-we
+ bsocket-8.5.29.jar hibernate-jpa-2.1-api-1.0.2.Final.jar okio-1.13.0.
+ jar javax.transaction-api-1.2.jar jboss-logging-3.3.2.Final.jar sprin
+ g-webmvc-5.0.9.RELEASE.jar jul-to-slf4j-1.7.25.jar
+Main-Class: cn.ictt.zhanghui.springboot_test.SpringbootTestApplication
+
