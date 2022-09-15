@@ -2,6 +2,7 @@ package cn.ictt.zhanghui.springboot_test.common.queue.mq;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Component;
  * @return
  */
 @Component
+@ConditionalOnProperty(name = "spring.activemq.enable", havingValue = "true", matchIfMissing = false)
 public class MqMessageSend {
     @Autowired
     @Qualifier("jmsQueueTemplate")

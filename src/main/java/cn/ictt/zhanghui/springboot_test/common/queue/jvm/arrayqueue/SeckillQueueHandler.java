@@ -1,7 +1,7 @@
 package cn.ictt.zhanghui.springboot_test.common.queue.jvm.arrayqueue;
 
 import cn.ictt.zhanghui.springboot_test.common.queue.disruptor.SeckillEvent;
-import cn.ictt.zhanghui.springboot_test.service.SeckillService;
+import cn.ictt.zhanghui.springboot_test.business.service.SeckillService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -19,7 +19,7 @@ public class TaskRunner implements ApplicationRunner {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(TaskRunner.class);
 
-    @Autowired
+    @Autowired(required = false)
     private RedisService redisService;
 
     ExecutorService executorService = Executors.newSingleThreadExecutor(r -> {

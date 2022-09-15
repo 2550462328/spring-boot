@@ -1,6 +1,7 @@
 package cn.ictt.zhanghui.springboot_test.common.queue.redis;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -18,6 +19,7 @@ import java.util.concurrent.*;
  * @return
  */
 @Configuration
+@ConditionalOnProperty(name = "spring.redis.enable", havingValue = "true", matchIfMissing = false)
 public class RedisSubListenerConfig {
     //初始化监听器
     @Bean

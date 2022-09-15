@@ -1,22 +1,18 @@
 package cn.ictt.zhanghui.springboot_test.service;
 
-import cn.ictt.zhanghui.springboot_test.domain.UserOpeareRepository;
+import cn.ictt.zhanghui.springboot_test.SpringbootTestApplicationTests;
+import cn.ictt.zhanghui.springboot_test.business.pojo.domain.UserOpeareRepository;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cache.CacheManager;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 测试JPA的本地缓存 @CacheValue 和 @CacheEvict
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class JPAEntityCacheTest {
+public class JPAEntityCacheTest extends SpringbootTestApplicationTests {
     @Autowired
     private UserOpeareRepository userRepository;
     //等于RedisTemplate<String, String>
@@ -29,7 +25,7 @@ public class JPAEntityCacheTest {
 
     @Test
     public void test1(){
-       /* redisTemplate.opsForValue().set("user1",new User_Operate(1L,"张辉",18));
+        /*redisTemplate.opsForValue().set("user1",new User_Operate(1L,"张辉",18));
         System.out.println(redisTemplate.opsForValue().get("user1"));*/
     }
 

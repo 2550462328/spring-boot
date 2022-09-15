@@ -1,6 +1,7 @@
 package cn.ictt.zhanghui.springboot_test.common.socket.websocket;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
 /**
@@ -8,7 +9,7 @@ import org.springframework.web.socket.server.standard.ServerEndpointExporter;
  * 创建者  科帮网
  * 创建时间	2018年5月29日
  */
-//@Configuration
+@Configuration
 public class WebSocketConfig {  
     @Bean  
     public ServerEndpointExporter serverEndpointExporter() {  

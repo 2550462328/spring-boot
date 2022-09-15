@@ -1,7 +1,7 @@
 package cn.ictt.zhanghui.springboot_test.common.queue.disruptor;
 
-import cn.ictt.zhanghui.springboot_test.service.SeckillService;
-import cn.ictt.zhanghui.springboot_test.util.frame.SpringUtils;
+import cn.ictt.zhanghui.springboot_test.business.service.SeckillService;
+import cn.ictt.zhanghui.springboot_test.base.util.frame.SpringUtils;
 import com.lmax.disruptor.EventHandler;
 
 /**

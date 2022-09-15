@@ -5,6 +5,7 @@ import com.google.common.base.Preconditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
@@ -19,6 +20,7 @@ import java.util.concurrent.TimeUnit;
  * @description redis的一些api的封装
  * @date 2020/3/18
  */
+@ConditionalOnProperty(name = "spring.redis.enable", havingValue = "true", matchIfMissing = false)
 @Component("redisService")
 public class RedisService {
     private static final Logger logger = LoggerFactory.getLogger(RedisService.class);

@@ -2,9 +2,11 @@ package cn.ictt.zhanghui.springboot_test.common.socket.websocket;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
+import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArraySet;
 
@@ -15,8 +17,8 @@ import java.util.concurrent.CopyOnWriteArraySet;
  * @date 2020/3/18
  * @return
  */
-//@ServerEndpoint("/websocket/{userId}")
-//@Component
+@ServerEndpoint("/websocket/{userId}")
+@Component
 public class WebSocketServer {
     private final static Logger log = LoggerFactory.getLogger(WebSocketServer.class);
     //静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。

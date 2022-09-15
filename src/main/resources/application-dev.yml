@@ -7,9 +7,9 @@ spring:
   datasource:
       #springBoot2.0默认数据连接池是hikari
       druid:
-        url: jdbc:mysql://localhost:3306/spring_boot_test1?characterEncoding=utf-8
+        url: jdbc:mysql://121.5.54.219:3306/spring_boot_test2?characterEncoding=utf-8
         username: root
-        password: root
+        password: yqqlmGSYCL222
         driver-class-name: com.mysql.jdbc.Driver
         initial-size: 5
         max-active: 100
@@ -25,22 +25,13 @@ spring:
     show-sql: false
     #自动创建表结构，用于自动创建、更新、验证数据库表结构。
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
   redis:
+    enable: false
     database: 0
     host: 127.0.0.1
     port: 6379
     password:
-    jedis:
-      pool:
-        #最大连接数据库连接数,设 0 为没有限制
-        max-active: 8
-        #最大等待连接中的数量,设 0 为没有限制
-        max-idle: 8
-        #最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制。
-        max-wait: -1ms
-        #最小等待连接中的数量,设 0 为没有限制
-        min-idle: 0
     lettuce:
       pool:
         max-active: 8
@@ -54,7 +45,7 @@ spring:
   mail:
     host: smtp.qq.com
     username: 2550462328@qq.com
-    password: vppfqakxxxxxxx
+    password: vppfqakwjlkzeaie
     properties:
       mail:
         smtp:
@@ -64,6 +55,7 @@ spring:
             required: true
   #activemq配置
   activemq:
+    enable: false
     broker-url: tcp://localhost:61616?jms.alwaysSyncSend=false&jms.useAsyncSend=true
     user: admin
     password: admin
@@ -73,13 +65,12 @@ spring:
   #强制设置缓存类型
   cache:
     type: ehcache
-  mvc:
-    static-path-pattern: /**
   thymeleaf:
     mode: LEGACYHTML5
     cache: false
   #kafka配置
   kafka:
+    enable: false
     # 指定kafka 代理地址，可以多个
     bootstrap-servers: 127.0.0.1:9999
     producer:
@@ -115,7 +106,6 @@ spring:
     expose-request-attributes: false
     expose-session-attributes: false
     expose-spring-macro-helpers: false
-
 management:
   server:
     #actuator端口
@@ -128,12 +118,13 @@ management:
       base-path: /actuator
       exposure:
         include: "*"
-        #exclude: env,beans
+#        exclude: health
       #开放所有页面节点  默认只开启了health、info两个节点
   endpoint:
     health:
       #显示健康具体信息  默认不会显示详细信息
       show-details: always
+      enabled: false
 # #ldap配置
 #  ldap:
 #    urls:
@@ -144,14 +135,6 @@ management:
 # #连接JNDI数据源
 # jndi-name: java:jboss/datasources/customers
 
-#配置springboot自带的Commons-logging
-#logging:
-#  #输出文件名
-#  file:
-#  #输出路径
-#  path:
-#  #日志级别
-#  level: info
 
 ##次数据库
 #spring.datasource.secondary:

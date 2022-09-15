@@ -1,19 +1,15 @@
 package cn.ictt.zhanghui.springboot_test.service;
 
+import cn.ictt.zhanghui.springboot_test.SpringbootTestApplicationTests;
+import cn.ictt.zhanghui.springboot_test.business.pojo.domain.UserOperate;
 import cn.ictt.zhanghui.springboot_test.common.dynamicquery.DynamicQuery;
-import cn.ictt.zhanghui.springboot_test.domain.UserOperate;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class UserOperateTest {
+public class UserOperateTest extends SpringbootTestApplicationTests {
 
     @Autowired
     private DynamicQuery dynamicQuery;

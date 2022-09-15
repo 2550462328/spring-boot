@@ -1,105 +1,82 @@
-//package cn.ictt.zhanghui.springboot_test.common.search;
-//
-//import cc.ryanc.halo.model.domain.Post;
-//import cc.ryanc.halo.model.dto.PageSearch;
-//import cn.hutool.core.util.StrUtil;
-//import cn.hutool.http.HtmlUtil;
-//import com.alibaba.fastjson.JSONObject;
-//import org.apache.http.HttpHost;
-//import org.elasticsearch.action.delete.DeleteRequest;
-//import org.elasticsearch.action.index.IndexRequest;
-//import org.elasticsearch.action.search.SearchRequest;
-//import org.elasticsearch.action.search.SearchResponse;
-//import org.elasticsearch.client.RequestOptions;
-//import org.elasticsearch.client.RestClient;
-//import org.elasticsearch.client.RestHighLevelClient;
-//import org.elasticsearch.client.indices.CreateIndexRequest;
-//import org.elasticsearch.common.settings.Settings;
-//import org.elasticsearch.common.unit.TimeValue;
-//import org.elasticsearch.common.xcontent.XContentBuilder;
-//import org.elasticsearch.common.xcontent.XContentType;
-//import org.elasticsearch.common.xcontent.json.JsonXContent;
-//import org.elasticsearch.index.query.BoolQueryBuilder;
-//import org.elasticsearch.index.query.MatchQueryBuilder;
-//import org.elasticsearch.index.query.QueryBuilders;
-//import org.elasticsearch.search.SearchHit;
-//import org.elasticsearch.search.SearchHits;
-//import org.elasticsearch.search.builder.SearchSourceBuilder;
-//import org.springframework.data.domain.Page;
-//
-//import java.io.IOException;
-//import java.util.ArrayList;
-//import java.util.Date;
-//import java.util.List;
-//import java.util.Map;
-//import java.util.concurrent.TimeUnit;
-//
-///**
-// * @author ZhangHui
-// * @version 1.0
-// * @className ElasticSearchUtils
-// * @description ElasticSearch工具类
-// * @date 2019/12/24
-// */
-//public class ElasticSearchUtils {
-//
-//    private static final String HOST = "localhost";
-//    private static final int PORT = 9200;
-//    private static final String INDEX_NAME = "post";
-//
-//    public static void main(String[] args) {
+package cn.ictt.zhanghui.springboot_test.common.search;
+
+import org.apache.http.HttpHost;
+import org.elasticsearch.client.RequestOptions;
+import org.elasticsearch.client.RestClient;
+import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.client.indices.CreateIndexRequest;
+import org.elasticsearch.common.settings.Settings;
+import org.elasticsearch.common.xcontent.XContentBuilder;
+import org.elasticsearch.common.xcontent.json.JsonXContent;
+
+import java.io.IOException;
+
+/**
+ * @author ZhangHui
+ * @version 1.0
+ * @className ElasticSearchUtils
+ * @description ElasticSearch工具类
+ * @date 2019/12/24
+ */
+public class ElasticSearchUtils {
+
+    private static final String HOST = "localhost";
+    private static final int PORT = 9200;
+    private static final String INDEX_NAME = "post";
+
+    public static void main(String[] args) {
 //        try {
-////            createIndex();
-////            savePost(new Post(1L, "测试", "这是一个测试的文档", "/test", "test文档", new Date(), null));
-////            savePost(new Post(2L,"测试", "这是一个测试的文档", "/test", "test文档", new Date(), null));
-////            savePost(new Post(3L,"测试", "这是一个测试的文档", "/test", "test文档", new Date(), null));
+//            createIndex();
+//            savePost(new Post(1L, "测试", "这是一个测试的文档", "/test", "test文档", new Date(), null));
+//            savePost(new Post(2L,"测试", "这是一个测试的文档", "/test", "test文档", new Date(), null));
+//            savePost(new Post(3L,"测试", "这是一个测试的文档", "/test", "test文档", new Date(), null));
 //            getPost("适配器", 0, 2);
-////            deletePost("1");
-////            deletePost("2");
-////            deletePost("3");
+//            deletePost("1");
+//            deletePost("2");
+//            deletePost("3");
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-//    }
-//
-//    public static void createIndex() throws IOException {
-//        RestHighLevelClient client = new RestHighLevelClient(RestClient.builder(new HttpHost(HOST, PORT, "http")));
-//        XContentBuilder builder = JsonXContent.contentBuilder()
-//                .startObject();
-//        {
-//            builder.startObject("properties");
-//            {
-//                builder.startObject("post-title")
-//                        .field("type", "keyword")
-//                        .endObject()
-//                        .startObject("post-content")
-//                        .field("type", "text")
-//                        .field("analyzer", "ik_max_word")
-//                        .endObject();
-//            }
-//            builder.endObject();
-//        }
-//        builder.endObject();
-//
-//        CreateIndexRequest request = new CreateIndexRequest(INDEX_NAME);
-//        //索引设置
-//        request.settings(Settings.builder()
-//                .put("index.number_of_shards", 3)
-//                .put("index.number_of_replicas", 2)
-//        );
-//
-//        request.mapping(builder);
-//        client.indices().create(request, RequestOptions.DEFAULT);
-//    }
-//
-//    /**
-//     * 向ElasticSearch插入Post数据
-//     *
-//     * @param post
-//     * @return void
-//     * @author ZhangHui
-//     * @date 2019/12/24
-//     */
+    }
+
+    public static void createIndex() throws IOException {
+        RestHighLevelClient client = new RestHighLevelClient(RestClient.builder(new HttpHost(HOST, PORT, "http")));
+        XContentBuilder builder = JsonXContent.contentBuilder()
+                .startObject();
+        {
+            builder.startObject("properties");
+            {
+                builder.startObject("post-title")
+                        .field("type", "keyword")
+                        .endObject()
+                        .startObject("post-content")
+                        .field("type", "text")
+                        .field("analyzer", "ik_max_word")
+                        .endObject();
+            }
+            builder.endObject();
+        }
+        builder.endObject();
+
+        CreateIndexRequest request = new CreateIndexRequest(INDEX_NAME);
+        //索引设置
+        request.settings(Settings.builder()
+                .put("index.number_of_shards", 3)
+                .put("index.number_of_replicas", 2)
+        );
+
+        request.mapping(builder);
+        client.indices().create(request, RequestOptions.DEFAULT);
+    }
+
+    /**
+     * 向ElasticSearch插入Post数据
+     *
+     * @param post
+     * @return void
+     * @author ZhangHui
+     * @date 2019/12/24
+     */
 //    public static void savePost(Post post) throws IOException {
 //        RestHighLevelClient client = new RestHighLevelClient(RestClient.builder(new HttpHost(HOST, PORT, "http")));
 //        IndexRequest indexRequest = new IndexRequest(INDEX_NAME, "_doc", post.getPostId().toString());
@@ -115,15 +92,15 @@
 //        //添加数据
 //        client.index(indexRequest, RequestOptions.DEFAULT);
 //    }
-//
-//    /**
-//     * 从elasticsearch中分页查询
-//     *
-//     * @param keyword
-//     * @return cc.ryanc.halo.model.domain.Post
-//     * @author ZhangHui
-//     * @date 2019/12/24
-//     */
+
+    /**
+     * 从elasticsearch中分页查询
+     *
+     * @param keyword
+     * @return cc.ryanc.halo.model.domain.Post
+     * @author ZhangHui
+     * @date 2019/12/24
+     */
 //    public static Page<Post> getPost(String keyword, int pagenum, int size) throws IOException {
 //        RestHighLevelClient client = new RestHighLevelClient(RestClient.builder(new HttpHost(HOST, PORT, "http")));
 //        // 这个sourcebuilder就类似于查询语句中最外层的部分。包括查询分页的起始，
@@ -180,49 +157,49 @@
 //
 //        return assemblePage(pagenum, size, hits);
 //    }
-//
-//    /**
-//     * 根据postId删除索引
-//     *
-//     * @param postId
-//     * @return void
-//     * @author ZhangHui
-//     * @date 2019/12/24
-//     */
-//    public static void deletePost(String postId) throws IOException {
+
+    /**
+     * 根据postId删除索引
+     *
+     * @param postId
+     * @return void
+     * @author ZhangHui
+     * @date 2019/12/24
+     */
+    public static void deletePost(String postId) throws IOException {
 //        RestHighLevelClient client = new RestHighLevelClient(RestClient.builder(new HttpHost(HOST, PORT, "http")));
 //        //指定要删除的索引名称
 //        DeleteRequest request = new DeleteRequest(INDEX_NAME, "_doc", postId);
 //        //设置超时，等待所有节点确认索引删除（使用TimeValue形式）
 //        request.timeout(TimeValue.timeValueMinutes(2));
 //        client.delete(request, RequestOptions.DEFAULT);
-//        //异步执行删除索引请求需要将DeleteIndexRequest实例和ActionListener实例传递给异步方法：
-//        //DeleteIndexResponse的典型监听器如下所示：
-//        //异步方法不会阻塞并立即返回。
-////        ActionListener<DeleteIndexResponse> listener = new ActionListener<DeleteIndexResponse>() {
-////            @Override
-////            public void onResponse(DeleteIndexResponse deleteIndexResponse) {
-////                //如果执行成功，则调用onResponse方法;
-////            }
-////
-////            @Override
-////            public void onFailure(Exception e) {
-////                //如果失败，则调用onFailure方法。
-////            }
-////        };
-////        client.indices().deleteAsync(request, listener);
-//    }
+        //异步执行删除索引请求需要将DeleteIndexRequest实例和ActionListener实例传递给异步方法：
+        //DeleteIndexResponse的典型监听器如下所示：
+        //异步方法不会阻塞并立即返回。
+//        ActionListener<DeleteIndexResponse> listener = new ActionListener<DeleteIndexResponse>() {
+//            @Override
+//            public void onResponse(DeleteIndexResponse deleteIndexResponse) {
+//                //如果执行成功，则调用onResponse方法;
+//            }
 //
-//    /**
-//     * 根据查询结果封装
-//     *
-//     * @param pagenum
-//     * @param size
-//     * @param hits
-//     * @return org.springframework.data.domain.Page<cc.ryanc.halo.model.domain.Post>
-//     * @author ZhangHui
-//     * @date 2019/12/25
-//     */
+//            @Override
+//            public void onFailure(Exception e) {
+//                //如果失败，则调用onFailure方法。
+//            }
+//        };
+//        client.indices().deleteAsync(request, listener);
+    }
+
+    /**
+     * 根据查询结果封装
+     *
+     * @param pagenum
+     * @param size
+     * @param hits
+     * @return org.springframework.data.domain.Page<cc.ryanc.halo.model.domain.Post>
+     * @author ZhangHui
+     * @date 2019/12/25
+     */
 //    private static Page<Post> assemblePage(int pagenum, int size, SearchHits hits) {
 //        PageSearch page = new PageSearch() {
 //            @Override
@@ -279,4 +256,4 @@
 //        };
 //        return page;
 //    }
-//}
+}

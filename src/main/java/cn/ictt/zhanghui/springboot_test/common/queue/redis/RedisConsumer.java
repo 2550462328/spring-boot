@@ -2,22 +2,24 @@ package cn.ictt.zhanghui.springboot_test.common.queue.redis;
 
 import cn.ictt.zhanghui.springboot_test.common.redis.RedisService;
 import cn.ictt.zhanghui.springboot_test.common.socket.websocket.WebSocketServer;
-import cn.ictt.zhanghui.springboot_test.service.SeckillService;
-import cn.ictt.zhanghui.springboot_test.util.cipher.StringUtil;
+import cn.ictt.zhanghui.springboot_test.business.service.SeckillService;
+import cn.ictt.zhanghui.springboot_test.base.util.cipher.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
 /**
  * redis队列的消费者（监听事件）
  */
 @Service
+@ConditionalOnProperty(name = "spring.redis.enable", havingValue = "true", matchIfMissing = false)
 public class RedisConsumer {
 
 	@Autowired
 	private SeckillService seckillService;
-	@Autowired
+	@Autowired(required = false)
 	private RedisService redisService;
 
 	private Logger logger = LoggerFactory.getLogger(RedisConsumer.class);

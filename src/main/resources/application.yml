@@ -8,9 +8,6 @@ tengxun.verfycode:
   url: https://ssl.captcha.qq.com/ticket/verify
   appid: 1301601575
   secretkey: xxxxxxx
-redisson:
-  address: redis://127.0.0.1:6379
-  password:
 spring.freemarker.html.path: E://FileReceived//freemarker//
 oauth:
   clientid: ca0d972cabea7c246eb3

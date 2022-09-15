@@ -1,6 +1,6 @@
 package cn.ictt.zhanghui.springboot_test.common.lock.jedis;
 
-import cn.ictt.zhanghui.springboot_test.util.cipher.StringUtil;
+import cn.ictt.zhanghui.springboot_test.base.util.cipher.StringUtil;
 import lombok.extern.slf4j.Slf4j;
 import redis.clients.jedis.Jedis;
 

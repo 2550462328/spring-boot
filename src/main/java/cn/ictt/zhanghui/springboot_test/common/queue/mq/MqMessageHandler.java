@@ -1,26 +1,29 @@
 package cn.ictt.zhanghui.springboot_test.common.queue.mq;
 
+import cn.ictt.zhanghui.springboot_test.base.exception.enums.BusinessResponseEnum;
 import cn.ictt.zhanghui.springboot_test.common.redis.RedisService;
 import cn.ictt.zhanghui.springboot_test.common.socket.websocket.WebSocketServer;
-import cn.ictt.zhanghui.springboot_test.exception.MyException;
-import cn.ictt.zhanghui.springboot_test.service.SeckillService;
-import cn.ictt.zhanghui.springboot_test.util.cipher.StringUtil;
+import cn.ictt.zhanghui.springboot_test.business.service.SeckillService;
+import cn.ictt.zhanghui.springboot_test.base.util.cipher.StringUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.jms.annotation.JmsListener;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-//@Component
+@Component
 @Slf4j
+@ConditionalOnProperty(name = "spring.activemq.enable", havingValue = "true", matchIfMissing = false)
 public class MqMessageHandler {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private SeckillService seckillService;
 
-    @Autowired
+    @Autowired(required = false)
     private RedisService redisService;
 
     @JmsListener(destination = "queue-2", containerFactory = "queueListenerContainer")
@@ -41,7 +44,7 @@ public class MqMessageHandler {
     @JmsListener(destination = "seckill-queue", containerFactory = "queueListenerContainer")
     public void doSeckillTask(String message) {
         if(StringUtils.isEmpty(message) || !StringUtil.isNumber(message)){
-            throw new MyException(message + "无效的商品编号！");
+            BusinessResponseEnum.INVAID_GOOD_NUMBER.assertFail();
         }
         int goodsId = Integer.valueOf(message);
         boolean isSuccess = seckillService.doSeckill_pem(goodsId);
