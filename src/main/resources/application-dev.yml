@@ -109,6 +109,13 @@ spring:
   batch:
     job:
       enabled: false
+  data:
+    neo4j:
+      uri: bolt://localhost:7687
+      username: neo4j
+      password: huizhang43
+      repositories:
+        enabled: false
 management:
   server:
     #actuator端口

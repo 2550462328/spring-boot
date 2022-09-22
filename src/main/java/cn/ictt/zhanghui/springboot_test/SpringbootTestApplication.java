@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.statemachine.StateMachine;
 
@@ -18,6 +19,7 @@ import org.springframework.statemachine.StateMachine;
 //@EnableCaching
 //@EnableWebSecurity
 //@MapperScan("cn.ictt.zhanghui.springboot_test.pojo.mapper")
+@EntityScan("cn.ictt.zhanghui.springboot_test.business.pojo.domain")
 public class SpringbootTestApplication implements CommandLineRunner {
     public static void main(String[] args) {
         SpringApplication.run(SpringbootTestApplication.class, args);
