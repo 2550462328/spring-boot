@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cn.ictt.zhanghui</groupId>
-    <artifactId>springboot_test</artifactId>s
+    <artifactId>springboot_test</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot_test</name>
     <description>Demo project for Spring Boot</description>
@@ -43,6 +43,7 @@
         <jmh-generator-annprocess.version>1.21</jmh-generator-annprocess.version>
         <jjwt.version>0.9.1</jjwt.version>
         <hutool.version>5.4.2</hutool.version>
+        <jackson.version>2.13.4</jackson.version>
     </properties>
 
     <dependencies>
@@ -132,18 +133,22 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-joda</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-parameter-names</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
         <!-- alibaba的druid数据库连接池 -->
         <dependency>
@@ -363,6 +368,12 @@
             <artifactId>hutool-all</artifactId>
             <version>${hutool.version}</version>
             <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.batch</groupId>
+            <artifactId>spring-batch-core</artifactId>
+            <version>4.3.3</version>
         </dependency>
     </dependencies>
 

@@ -1,4 +1,4 @@
-package cn.ictt.zhanghui.springboot_test.business.pojo.domain;
+package cn.ictt.zhanghui.springboot_test.business.pojo.dto;
 
 import lombok.Data;
 

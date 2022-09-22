@@ -1,10 +1,13 @@
 package cn.ictt.zhanghui.springboot_test.business.pojo.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import javax.persistence.LockModeType;
 
 /**
  * @author ZhangHui
@@ -19,7 +22,8 @@ public interface GoodsRepository extends JpaRepository<Goods, Integer> {
     @Query(value = "select * from goods where id = ?1", nativeQuery = true)
     Goods findById(int id);
 
-    //@Lock(LockModeType.PESSIMISTIC_WRITE) 也可以通过注解的方式加上行级锁实现乐观锁
+    //也可以通过注解的方式加上行级锁实现乐观锁
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query(value = "select * from goods where id = ?1 for update", nativeQuery = true)
     Goods findByIdWithLock(int id);
 

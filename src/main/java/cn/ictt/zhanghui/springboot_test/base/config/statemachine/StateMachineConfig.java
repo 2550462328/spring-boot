@@ -1,4 +1,4 @@
-package cn.ictt.zhanghui.springboot_test.base.config;
+package cn.ictt.zhanghui.springboot_test.base.config.statemachine;
 
 import cn.ictt.zhanghui.springboot_test.base.enums.Events;
 import cn.ictt.zhanghui.springboot_test.base.enums.States;

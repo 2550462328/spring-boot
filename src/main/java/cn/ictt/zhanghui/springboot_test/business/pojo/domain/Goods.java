@@ -25,8 +25,11 @@ public class Goods {
     @Column(name = "num")
     private int num;
 
+    /**
+     * 可以直接添加version注释，在进行update操作的时候会自动检测
+     */
     @Column(name="version")
-//    @Version  可以直接添加version注释，在进行update操作的时候会自动检测
+    @Version
     private int version;
 
     @Column(name = "price")

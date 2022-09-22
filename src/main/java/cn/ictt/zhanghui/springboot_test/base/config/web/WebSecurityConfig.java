@@ -1,4 +1,4 @@
-package cn.ictt.zhanghui.springboot_test.base.config;
+package cn.ictt.zhanghui.springboot_test.base.config.web;
 
 import cn.ictt.zhanghui.springboot_test.base.filter.JwtAuthenticationFilter;
 import cn.ictt.zhanghui.springboot_test.base.filter.JwtAuthorizationFilter;

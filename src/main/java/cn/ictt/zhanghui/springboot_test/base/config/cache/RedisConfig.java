@@ -1,4 +1,4 @@
-package cn.ictt.zhanghui.springboot_test.base.config;
+package cn.ictt.zhanghui.springboot_test.base.config.cache;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

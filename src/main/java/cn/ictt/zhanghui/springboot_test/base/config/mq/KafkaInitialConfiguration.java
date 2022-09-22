@@ -1,4 +1,4 @@
-package cn.ictt.zhanghui.springboot_test.base.config;
+package cn.ictt.zhanghui.springboot_test.base.config.mq;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

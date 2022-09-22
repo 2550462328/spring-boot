@@ -25,7 +25,7 @@ spring:
     show-sql: false
     #自动创建表结构，用于自动创建、更新、验证数据库表结构。
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
   redis:
     enable: false
     database: 0
@@ -106,6 +106,9 @@ spring:
     expose-request-attributes: false
     expose-session-attributes: false
     expose-spring-macro-helpers: false
+  batch:
+    job:
+      enabled: false
 management:
   server:
     #actuator端口
@@ -134,7 +137,6 @@ management:
 
 # #连接JNDI数据源
 # jndi-name: java:jboss/datasources/customers
-
 
 ##次数据库
 #spring.datasource.secondary:

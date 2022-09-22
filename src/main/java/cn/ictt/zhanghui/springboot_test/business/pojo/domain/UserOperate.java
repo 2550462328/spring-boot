@@ -9,7 +9,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,9 +20,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @ToString
-public class UserOperate implements Serializable {
-
-    private static final long serialVersionUID = -1L;
+public class UserOperate {
 
     @Id
     @GenericGenerator(name = "uuid", strategy = "uuid")
@@ -43,14 +40,15 @@ public class UserOperate implements Serializable {
     @Column(columnDefinition = "tinyint(1) default 1")
     private Boolean enabled;
 
-    public UserOperate(){}
+    public UserOperate() {
+    }
 
     public UserOperate(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-//    @ManyToOne
+    //    @ManyToOne
 //    @JoinColumn(name = "role_id")
 //    private Role role;
 
