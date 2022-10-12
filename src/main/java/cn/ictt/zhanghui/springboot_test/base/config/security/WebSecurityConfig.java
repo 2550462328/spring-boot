@@ -1,4 +1,4 @@
-package cn.ictt.zhanghui.springboot_test.base.config.web;
+package cn.ictt.zhanghui.springboot_test.base.config.security;
 
 import cn.ictt.zhanghui.springboot_test.base.filter.JwtAuthenticationFilter;
 import cn.ictt.zhanghui.springboot_test.base.filter.JwtAuthorizationFilter;
@@ -24,6 +24,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
  * @date 2020/9/10
  */
 @Configuration
+//@EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled=true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 

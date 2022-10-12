@@ -48,7 +48,7 @@ public class UserOperate {
         this.password = password;
     }
 
-    //    @ManyToOne
+//    @ManyToOne
 //    @JoinColumn(name = "role_id")
 //    private Role role;
 

@@ -51,7 +51,7 @@ public class UserTestServiceImpl implements UserTestService {
     public String addUser() {
 
         log.info("准备插入user数据");
-        userRepository.save(new UserOperate("zhanghui", "123"));
+        userRepository.save(new UserOperate("zhanghui", "123456"));
         addRole();
 
         return "ok";

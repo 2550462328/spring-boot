@@ -19,6 +19,7 @@ import java.util.*;
 @RequestMapping(value= "users")
 public class MockUserController {
     static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User>());
+
     @ApiOperation(value = "获取用户列表", notes = "get方式")
     @RequestMapping(value="/", method=RequestMethod.GET)
     public List<User> getUserList() {

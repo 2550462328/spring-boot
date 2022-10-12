@@ -1,4 +1,4 @@
-package cn.ictt.zhanghui.springboot_test.base.config.web;
+package cn.ictt.zhanghui.springboot_test.base.config.security;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;

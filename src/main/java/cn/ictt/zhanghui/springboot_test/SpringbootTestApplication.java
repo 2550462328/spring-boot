@@ -1,27 +1,22 @@
 package cn.ictt.zhanghui.springboot_test;
 
-import cn.ictt.zhanghui.springboot_test.base.enums.Events;
-import cn.ictt.zhanghui.springboot_test.base.enums.States;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
-import org.springframework.statemachine.StateMachine;
 
 @SpringBootApplication
 //@EnableScheduling
 //@EnableAsync
 //@EnableCaching
-//@EnableWebSecurity
 //@MapperScan("cn.ictt.zhanghui.springboot_test.pojo.mapper")
 @EntityScan("cn.ictt.zhanghui.springboot_test.business.pojo.domain")
 public class SpringbootTestApplication implements CommandLineRunner {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         SpringApplication.run(SpringbootTestApplication.class, args);
     }
 
@@ -33,13 +28,13 @@ public class SpringbootTestApplication implements CommandLineRunner {
         return objectMapper;
     }
 
-    @Autowired
-    private StateMachine<States, Events> stateMachine;
+//    @Autowired
+//    private StateMachine<States, Events> stateMachine;
 
     @Override
     public void run(String... args) throws Exception {
-        stateMachine.start();
-        stateMachine.sendEvent(Events.PAY);
-        stateMachine.sendEvent(Events.RECEIVE);
+//        stateMachine.start();
+//        stateMachine.sendEvent(Events.PAY);
+//        stateMachine.sendEvent(Events.RECEIVE);
     }
 }
